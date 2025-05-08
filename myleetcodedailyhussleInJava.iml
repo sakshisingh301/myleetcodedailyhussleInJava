@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/SlidingWindow" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/leetcodedaily_may" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/greedy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/HashSet" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
