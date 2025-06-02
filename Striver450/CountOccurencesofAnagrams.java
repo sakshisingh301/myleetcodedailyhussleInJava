@@ -44,58 +44,30 @@ public class CountOccurencesofAnagrams {
 
 
     }
+    //s={cbaebabacd}
+    //p={abc}
+    public static List<Integer> findAnagrams(String s, String p) {
+       return null;
 
-    public List<Integer> findAnagrams(String s, String p) {
 
-        HashMap<Character,Integer> map=new HashMap<>();
-        List<Integer> result=new ArrayList<>();
 
-        int window=p.length();
-        for(char c: p.toCharArray())
-        {
-            map.put(c, map.getOrDefault(c,0)+1);
-        }
-        int count=map.size();
-        int i=0;
-        int j=0;
-        while(j<s.length())
-        {
-            char curr=s.charAt(j);
-            if(map.containsKey(curr)) {
-                map.put(curr, map.get(curr) - 1);
-                if (map.get(curr) == 0) {
-                    count--;
-                }
-            }
 
-                if(j-i+1<window)
-                {
-                    j++;
-                }
-                else if(j-i+1==window)
-                {
-                    if(count==0)
-                    {
-                        result.add(i);
-                    }
-                    if(map.containsKey(curr))
-                    {
-                        map.put(curr,map.get(curr)+1 );
-                        if(map.get(curr)==1)
-                        {
-                            count++;
-                        }
-                    }
-                    j++;
-                    i++;
-                }
-            }
-            return result;
+
 
 
         }
+
+    public static void main(String[] args) {
+
+       String s = "cbaebabacd";
+       String p = "abc";
+       System.out.println(findAnagrams(s,p));
 
     }
+
+    }
+
+
 
 
 
