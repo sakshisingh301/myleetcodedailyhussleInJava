@@ -14,8 +14,6 @@ public class Contiguous_Array {
         }
 
         HashMap<Integer,Integer> map=new HashMap<>();
-        HashSet<Integer> seen=new HashSet<>();
-        seen.add(0);
         map.put(0,-1);
         int prefix_sum=0;
         int max=0;

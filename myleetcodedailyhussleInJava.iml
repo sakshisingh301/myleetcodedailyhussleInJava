@@ -10,6 +10,9 @@
       <sourceFolder url="file://$MODULE_DIR$/greedy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/HashSet" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Striver450" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/twopointers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MonotonicStack" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Heap" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
