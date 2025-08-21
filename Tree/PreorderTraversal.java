@@ -4,30 +4,54 @@ import java.util.Stack;
 
 public class PreorderTraversal {
 
-    class TreeNode {
+    public static class TreeNode {
         int val;
-        TreeNode left;
         TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
+        TreeNode left;
+
+        TreeNode(int val) {
             this.val = val;
-            this.left = left;
-            this.right = right;
+            left = right = null;
         }
     }
 
-    public List<Integer> preorderTraversal(TreeNode root) {
 
-        if(root==null) return null;
-        Stack<TreeNode> stack=new Stack<>();
+    public static List<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> result=new ArrayList<>();
+        if(root==null) return result;
 
+        Stack<TreeNode> stack=new Stack<>();
+
+        TreeNode curr=root;
+        stack.push(curr);
+
+        while(!stack.isEmpty() )
+        {
+            curr=stack.peek();
+            result.add(curr.val);
+            curr=stack.pop();
+            if(curr.right!=null) {
+                stack.push(curr.right);
+            }
+            if(curr.left!=null) {
+                stack.push(curr.left);
+            }
+        }
+        return result;
 
 
     }
 
     public static void main(String[] args) {
+
+        TreeNode root=new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(4);
+        root.right=new TreeNode(3);
+        root.right.left=new TreeNode(5);
+        preorderTraversal(root);
+
+
 
 
 
