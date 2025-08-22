@@ -42,6 +42,18 @@ public class PreorderTraversal {
 
     }
 
+    public static List<Integer> preorderTraversalRecursion(TreeNode root) {
+        ArrayList<Integer> result=new ArrayList<>();
+        if(root==null) return result;
+        result.add(root.val);
+        result.addAll(preorderTraversalRecursion(root.left));
+        result.addAll(preorderTraversalRecursion(root.right));
+        return result;
+
+
+
+    }
+
     public static void main(String[] args) {
 
         TreeNode root=new TreeNode(1);
