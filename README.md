@@ -21,5 +21,7 @@ It’s not just practice anymore—
 it’s addictive, it’s fun, and it’s my daily dose of problem-solving endorphins.  
 Consistency is the new motivation.  
 
+This time I am leetcoding differently and will keep documenting my observation here
+
 ---
 ✨ *Welcome to my coding log — where brain meets hustle.*  
