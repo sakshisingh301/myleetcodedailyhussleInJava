@@ -1,1 +1,25 @@
-I started this year by promising myself I’d stay consistent with coding—like going to the gym, but for my brain. And now here I am, grinding every single day, not just for interviews, but to actually get it. It’s become my daily brain cardio. Honestly, it’s so addictive that skipping one day gives me a mini panic attack. Which is kind of what I wanted, because who needs caffeine when your own guilt keeps you awake and coding?
+# 🧠 Love and hate relationship between me and leetcode
+
+At the start of this year, I made a promise to myself:  
+**Stay consistent with coding.**  
+
+Not just for interview prep.  
+Not just for solving problems on the surface.  
+But to truly **understand concepts deeply** and train my brain like it’s at the gym. 🏋️‍♀️  
+
+## 🚀 The Grind
+- Coding every single day 💻  
+- Treating it like **brain cardio** 🫀  
+- Building the habit so strong that skipping one day feels like…  
+  > *a mini panic attack* (low-key, that’s what I wanted 😅)
+
+## 🔥 Why?
+Because who needs caffeine when your own guilt keeps you awake and coding at 2 AM?  
+
+## 🌟 The Vibe
+It’s not just practice anymore—  
+it’s addictive, it’s fun, and it’s my daily dose of problem-solving endorphins.  
+Consistency is the new motivation.  
+
+---
+✨ *Welcome to my coding log — where brain meets hustle.*  
