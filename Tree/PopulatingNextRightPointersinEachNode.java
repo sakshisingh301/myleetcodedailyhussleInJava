@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class PopulatingNextRightPointersinEachNode {
-    class Node {
+    static class  Node {
         public int val;
         public Node left;
         public Node right;
@@ -18,7 +18,7 @@ public class PopulatingNextRightPointersinEachNode {
             val = _val;
             left = _left;
             right = _right;
-            next = _next;
+//            next = _next;
         }
     };
     //this solution is taking 3ms
@@ -55,25 +55,55 @@ public class PopulatingNextRightPointersinEachNode {
         return root;
     }
 
-    public Node connectBetter(Node root)
+    public static Node connectBetter(Node root)
     {
-        if(root==null) return null;
 
-        Node level=root;
+       Node level=root;
+       while(level.left!=null)
+       {
+           Node curr=level;
+           while(curr!=null)
+           {
+               curr.left.next=curr.right;
+               if(curr.next!=null)
+               {
+                   curr.right.next=curr.next.left;
+               }
+               curr=curr.next;
+           }
 
-        while (level.left!=null)
+           level=level.left;
+       }
+      return root;
+
+    }
+    //via recursion
+    public static Node connectRecursion(Node root)
+    {
+        //Base Condition
+        if(root==null) return root;
+        //Induction
+        root.left.next=root.right;
+        if(root.next!=null)
         {
-            Node curr=level;
-            curr.left.next=curr.right;
-            if(curr.right.next!=null)
-            {
-                curr.right.next=curr.next.left;
-            }
-            curr=curr.next;
-            level=level.left;
+            root.right.next=root.next.left;
         }
 
-            return root;
+        //Hypothesis
+        connectRecursion(root.left);
+        connectRecursion(root.right);
+        return root;
+
+    }
+
+    public static void main(String[] args) {
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.left.left = new Node(4);
+        root.right = new Node(3);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
+        connectBetter(root);
     }
 }
 
