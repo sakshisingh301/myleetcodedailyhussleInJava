@@ -1,10 +1,6 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
-public class LowestCommonAncessestor {
-
+public class LowestCommonAncessestorII {
     static class TreeNode{
         int val;
         TreeNode right,left;
@@ -15,54 +11,26 @@ public class LowestCommonAncessestor {
         }
     }
 
-    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-
-        //base condition
-        if(root==null) return null;
-        if(root==p ||root==q) return root;
-        //induction
-        //hypothesis
-        TreeNode left=lowestCommonAncestor(root.left,p,q);
-        TreeNode right=lowestCommonAncestor(root.right,p,q);
-        if(left!=null && right!=null)
-        {
-            return root;
-        }
-        else if(left==null && right!=null)
-        {
-            return right;
-        }
-        else {
-            return left;
-        }
-    }
-
-    class Inside{
-        TreeNode treeNode;
+    public class Inside{
+        TreeNode node;
         List<TreeNode> paths;
-        Inside(TreeNode treeNode,List<TreeNode> paths)
+        Inside(TreeNode node,List<TreeNode> paths)
         {
+            this.node=node;
             this.paths=paths;
-            this.treeNode=treeNode;
         }
-
     }
 
-    public TreeNode lowestCommonAncessorIterative(TreeNode root, TreeNode p, TreeNode q)
-    {
-
-
-
-        Stack<Inside> stack=new Stack<>();
-        stack.push(new Inside(root, new ArrayList<>(Arrays.asList(root)) ));
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         List<TreeNode> p_path=new ArrayList<>();
         List<TreeNode> q_path=new ArrayList<>();
+        Stack<Inside> stack=new Stack<>();
+        stack.push(new Inside(root, Arrays.asList(root)));
 
-        while(!stack.isEmpty())
+        while(stack.isEmpty())
         {
             Inside curr=stack.pop();
-            TreeNode currNode=curr.treeNode;
-
+            TreeNode currNode=curr.node;
             if(currNode==p)
             {
                 p_path=curr.paths;
@@ -76,6 +44,7 @@ public class LowestCommonAncessestor {
                 List<TreeNode> newPath=new ArrayList<>(curr.paths);
                 newPath.add(currNode.right);
                 stack.push(new Inside(currNode.right,newPath));
+
             }
             if(currNode.left!=null)
             {
@@ -85,28 +54,26 @@ public class LowestCommonAncessestor {
             }
 
         }
-
+        if(p_path.isEmpty() ||q_path.isEmpty())
+        {
+            return null;
+        }
         int i=0;
         TreeNode result=null;
-        while(i<p_path.size() || i<q_path.size())
+        while(i<p_path.size() && i<q_path.size())
         {
-
             if(p_path.get(i)!=q_path.get(i))
             {
                 break;
             }
-           result=p_path.get(i);
+            result=p_path.get(i);
             i++;
-
         }
         return result;
 
 
 
     }
-
-
-
 
     public static void main(String[] args) {
 

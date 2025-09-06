@@ -13,6 +13,11 @@
       <sourceFolder url="file://$MODULE_DIR$/twopointers" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MonotonicStack" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Heap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BinarySearch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Intervals" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recursion" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Revise" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
