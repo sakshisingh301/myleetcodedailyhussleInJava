@@ -52,5 +52,8 @@ public class SerializeAndDeserializeBinaryTree {
         return root;
     }
 
-    //postorder method
+    //Why inorder would not work?
+    //left-->root--> right: so we process leftsubtree first and then process root but leftsubtree can be of any length
+    //and we are kind of losing track of root. We can also do this problem via postorder and in that we would surely know
+    //where the root is which is the last element.
 }
