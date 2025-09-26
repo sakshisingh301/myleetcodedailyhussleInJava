@@ -25,7 +25,35 @@ public class RemovingStarsFromaString {
 
     }
 
+    public static String removeStarsTwoPointer(String s)
+    {
+        int skipStar=0;
+        StringBuilder stringBuilder=new StringBuilder();
+        int i=s.length()-1;
+
+       while(i>=0)
+       {
+           if(s.charAt(i)=='*')
+           {
+               skipStar++;
+               i--;
+           }
+           else if(skipStar>0)
+           {
+               i--;
+               skipStar--;
+           }
+           else {
+               stringBuilder.append(s.charAt(i));
+               i--;
+           }
+
+       }
+       return stringBuilder.reverse().toString();
+    }
+
     public static void main(String[] args) {
       String  s = "leet**cod*e";
+      System.out.println(removeStarsTwoPointer(s));
     }
 }
