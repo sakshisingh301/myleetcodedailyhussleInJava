@@ -16,12 +16,6 @@ But to truly **understand concepts deeply** and train my brain like it’s at th
 ##  Why?
 Because who needs caffeine when your own guilt keeps you awake and coding at 2 AM?  
 
-##  The Vibe
-It’s not just practice anymore—  
-it’s addictive, it’s fun, and it’s my daily dose of problem-solving endorphins.  
-Consistency is the new motivation.  
-
-This time I am leetcoding differently and will keep documenting my observation here
 
 ---
 *Welcome to my coding log — where brain meets hustle.*  
