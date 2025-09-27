@@ -31,13 +31,44 @@ public class CrawlerLogFolder {
         else {
             return stack.size();
         }
+    }
 
+    public static int minOperationsTwoPointer(String[] logs) {
+
+        int i= logs.length-1;
+        int skip=0;
+        int min=0;
+
+
+        while(i>=0)
+        {
+            if(logs[i].equals("../"))
+            {
+                skip++;
+                i--;
+            } else if (skip>0 && !logs[i].equals("./")) {
+                skip--;
+                i--;
+
+            }
+            else if(logs[i].endsWith("/") && !logs[i].equals("./") && !logs[i].equals("../"))
+            {
+                min++;
+                i--;
+
+            }
+            else {
+                i--;
+            }
+        }
+        return min;
 
     }
 
     public static void main(String[] args) {
-        String [] s={"./","../","./"};
-        minOperations(s);
+        String [] s={"lq3/","t5/","../","./","p7/","./","../"};
+        System.out.println(minOperationsTwoPointer(s));
+
     }
 
 
