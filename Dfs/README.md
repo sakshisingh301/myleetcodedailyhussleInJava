@@ -1,8 +1,8 @@
 NO OF PROVINCE
 
 This question is very similar to connected component in undirected graph.
-I did that question first created Adjacency list but why?
-so when i run my DFS call, i can know who all are my neighbour.
+I did that question first, created Adjacency list but why?
+so when i run my DFS call, i can know who all are my neighbours.
 It was easier for me to think through the solution but oh boy, while writing the code i definitely needed some help.
 
 Create Adjacency list 
