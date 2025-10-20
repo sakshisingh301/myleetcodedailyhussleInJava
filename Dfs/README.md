@@ -28,3 +28,11 @@ yayyyyy
 
 SURROUNDING REGIONS:
 refer to my notion notebook
+
+COUNT SUBISLANDS
+
+very similar to Number of closed Island
+
+Start DFS call and count the island and check if it is closed
+
+for checking closed condition, I have kept a boolean and i am checking if in grid1, its 1.
