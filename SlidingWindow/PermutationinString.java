@@ -37,10 +37,60 @@ public class PermutationinString {
 
     }
 
+    public static boolean checkInclusionAdvancedSlidingWindow(String s1, String s2) {
+
+        int[] freqS1 = new int[26];
+        int[] freqS2 = new int[26];
+
+        // add s1 and their frequency
+        for (int i = 0; i < s1.length(); i++) {
+            freqS1[s1.charAt(i) - 'a']++;
+        }
+
+        // add s2 (first window)
+        for (int i = 0; i < s1.length(); i++) {
+            freqS2[s2.charAt(i) - 'a']++;
+        }
+
+        int count = 0;
+        for (int i = 0; i < 26; i++) {
+            if (freqS1[i] == freqS2[i]) {
+                count++;
+            }
+        }
+
+        for (int i = 0; i < s2.length() - s1.length(); i++) {
+            if (count == 26) return true;
+
+            int index_of_newChar = s2.charAt(i + s1.length()) - 'a';
+            int index_of_oldChar = s2.charAt(i) - 'a';
+
+            // ---- Remove old character ----
+            freqS2[index_of_oldChar]--;
+            if (freqS1[index_of_oldChar] == freqS2[index_of_oldChar]) {
+                count++; // they became equal now
+            } else if (freqS2[index_of_oldChar] + 1 == freqS1[index_of_oldChar]) {
+                count--; // they were equal before, now not equal
+            }
+
+            // ---- Add new character ----
+            freqS2[index_of_newChar]++;
+            if (freqS1[index_of_newChar] == freqS2[index_of_newChar]) {
+                count++; // they became equal now
+            } else if (freqS2[index_of_newChar] - 1 == freqS1[index_of_newChar]) {
+                count--; // they were equal before, now not equal
+            }
+        }
+
+        return count == 26;
+    }
+
+
+
     public static void main(String[] args) {
 
-        String s1 = "abb", s2 = "ddc";
-        System.out.println(checkInclusion(s1,s2));
+        String s1 = "ab", s2 = "eidbaooo";
+        System.out.println(checkInclusionAdvancedSlidingWindow(s1,s2));
 
     }
 }
