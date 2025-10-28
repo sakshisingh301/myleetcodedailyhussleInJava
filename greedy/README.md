@@ -77,6 +77,36 @@ TWO CITY SCHEDULING:
 
 ![PetChain Logo](./images/TwoCitySchedule3.jpg)
 
+TASK SCHEDULER:
+
+pick the task with the highest frequency why? Its like how i finish off the task which is the difficult first thing in the morning
+
+If you pick the highest frequency task first, it will minimize the idle time and thats our goal.
+
+Coding was bit difficult:
+
+create freqArray with character and their frequency. ex-[A A A B B B] n = 2
+
+A:3 B: 3
+
+
+Iterate through the freqArray and get the frequency of all tasks and put it in the max_heap
+
+[3,3]
+
+Define Window= n+1 
+
+A _ _ A so the window is 3 here
+
+Now get the most frequent element and start diving the task
+
+[2,2]-> [1,1]->[0]
+
+
+
+
+
+
 
 
 
