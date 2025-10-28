@@ -7,6 +7,7 @@ public class TaskScheduler {
 
     public static int leastInterval(char[] tasks, int n) {
         if(n==0) return tasks.length;
+        //get the most frequent task and start diving the task and put remaining task back in the max_heap
 
         int [] frequencyChar= new int[26];
         for(int i=0;i< tasks.length;i++)
