@@ -61,12 +61,43 @@ public class MergeIntervals {
 
     }
 
+    public static int[][] mergeIntervalAgain(int[][] intervals) {
+
+        ArrayList<int []> res=new ArrayList<>();
+
+        int start=intervals[0][0];
+        int end=intervals[0][1];
+        int index=1;
+
+        while(index< intervals.length)
+        {
+            if(intervals[index][0]<=end)
+            {
+                end=Math.max(end,intervals[index][1]);
+
+            }
+            else {
+                res.add(new int []{start,end});
+                start=intervals[index][0];
+                end=intervals[index][1];
+
+            }
+            index++;
+
+        }
+        return res.toArray(new int[0][0]);
+
+
+
+    }
+
 
 
     public static void main(String[] args) {
-      int [] [] intervals = {{2,3},{2,2},{3,3},{1,3},{5,7},{2,2},{4,6}};
+
+      //intervals = [[1,3],[2,6],[8,10],[15,18]]
       //((1,3)(2,2),(2,2),(2,3),(3,3),(4,6),(5,7))
 
-      System.out.println(merge1(intervals));
+
     }
 }
